@@ -937,7 +937,7 @@ enum GCDAsyncSocketConfig
 	if((self = [super init]))
 	{
 		delegate = aDelegate;
-		delegateQueue = dq;
+		delegateQueue = dispatch_get_main_queue();
 		
 		#if !OS_OBJECT_USE_OBJC
 		if (dq) dispatch_retain(dq);
