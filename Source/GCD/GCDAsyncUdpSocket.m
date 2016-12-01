@@ -365,13 +365,12 @@ enum GCDAsyncUdpSocketConfig
 	{
 		delegate = aDelegate;
 		
-		if (dq)
-		{
-			delegateQueue = dispatch_get_main_queue();
-			#if !OS_OBJECT_USE_OBJC
-			dispatch_retain(delegateQueue);
-			#endif
-		}
+	
+		delegateQueue = dispatch_get_main_queue();
+		#if !OS_OBJECT_USE_OBJC
+		dispatch_retain(delegateQueue);
+		#endif
+		
 		
 		max4ReceiveSize = 9216;
 		max6ReceiveSize = 9216;
